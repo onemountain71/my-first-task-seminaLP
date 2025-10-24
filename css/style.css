@@ -63,7 +63,7 @@ body {
 
 /* Banner Section */
 .banner img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   display: block;
 }
@@ -395,32 +395,75 @@ body {
   background: linear-gradient(135deg, var(--color-mint) 0%, var(--color-pink) 100%);
   color: var(--color-text);
   padding: 100px 0;
-  text-align: center;
+}
+
+.hero .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.hero-text {
+  flex: 1;
+  text-align: left;
 }
 
 .hero h1 {
-  font-size: 2.5rem;
+  font-size: clamp(24px, 5vw, 48px);
   margin-bottom: 20px;
   font-weight: bold;
+  line-height: 1.2;
+}
+
+.hero .highlight {
+  background-color: var(--color-pink);
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: var(--color-text);
 }
 
 .hero .hero-subtitle {
   font-size: 1.2rem;
-  margin-bottom: 10px;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 10px;
-  border-radius: 20px;
-  display: inline-block;
-}
-
-.hero .hero-desc {
-  font-size: 1.1rem;
   margin-bottom: 30px;
+  color: var(--color-text);
 }
 
 .hero .btn {
   background-color: var(--color-bg);
   color: var(--color-text);
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* About Section */
@@ -852,8 +895,21 @@ footer {
     padding: 50px 0;
   }
 
+  .hero-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
   .hero h1 {
-    font-size: 2rem;
+    font-size: clamp(24px, 5vw, 48px);
+  }
+
+  .hero-image img {
+    max-width: 100%;
   }
 
   .about {
